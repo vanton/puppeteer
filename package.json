@@ -122,7 +122,7 @@
     "@prettier/sync": "0.3.0",
     "@types/debug": "4.1.10",
     "@types/diff": "5.0.7",
-    "@types/mime": "3.0.3",
+    "@types/mime": "3.0.4",
     "@types/mocha": "10.0.3",
     "@types/node": "20.8.4",
     "@types/pixelmatch": "5.2.5",
