@@ -30,11 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 2
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -82,9 +82,9 @@ jobs:
       contents: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -128,9 +128,9 @@ jobs:
     if: ${{ false && contains(fromJSON(needs.check-changes.outputs.changes), 'puppeteer') }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -177,9 +177,9 @@ jobs:
             suite: chrome-headful
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -226,7 +226,7 @@ jobs:
         run: xvfb-run --auto-servernum npm run test -- --shard '${{ matrix.shard }}' --test-suite ${{ matrix.suite }} --save-stats-to /tmp/artifacts/${{ github.event_name }}_INSERTID.json
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.browser.outputs.executablePath }}
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # v4.3.6
         if: always()
         with:
           name: test-results-${{ matrix.os }}-${{ matrix.suite }}-${{ matrix.shard }}
@@ -281,9 +281,9 @@ jobs:
             suite: firefox-headless
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -310,7 +310,7 @@ jobs:
       - name: Run all tests (for Linux)
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: xvfb-run --auto-servernum npm run test -- --shard '${{ matrix.shard }}' --test-suite ${{ matrix.suite }} --save-stats-to /tmp/artifacts/${{ github.event_name }}_INSERTID.json
-      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+      - uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # v4.3.6
         if: always()
         with:
           name: test-results-${{ matrix.os }}-${{ matrix.suite }}-${{ matrix.shard }}
@@ -349,9 +349,9 @@ jobs:
             os: macos-13
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -394,11 +394,11 @@ jobs:
     if: ${{ contains(fromJSON(needs.check-changes.outputs.changes), 'puppeteer') }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 2
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -426,9 +426,9 @@ jobs:
     if: ${{ contains(fromJSON(needs.check-changes.outputs.changes), 'puppeteer') }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -447,9 +447,9 @@ jobs:
     if: ${{ contains(fromJSON(needs.check-changes.outputs.changes), 'ng-schematics') }}
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -481,9 +481,9 @@ jobs:
             os: macos-13
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
@@ -535,9 +535,9 @@ jobs:
             os: macos-13
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: npm
           node-version-file: '.nvmrc'
